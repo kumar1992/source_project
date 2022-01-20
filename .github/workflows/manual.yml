@@ -28,7 +28,7 @@ jobs:
           echo "[LOG] Setup global config"
           git config  user.email "${{ secrets.USER_EMAIL }}"
           git config  user.name "${{ secrets.USER_NAME }}"
-          git remote set-url origin https://x-access-token:${{ secrets.TOKEN }}@github.com/kumar1992/Mydockerproject
+          git remote set-url origin https://${{ secrets.TOKEN }}@github.com/kumar1992/Mydockerproject.git
           echo "--------------------"
           git add -A
           echo added all files
