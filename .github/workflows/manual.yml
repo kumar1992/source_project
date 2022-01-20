@@ -19,7 +19,10 @@ jobs:
           ls
           echo "--------------------"
           git clone https://@github.com/kumar1992/Mydockerproject.git Mydockerproject 
+          ls
           echo "--------------------"
+          cp source_project/*.txt Mydockerproject/.
+          cd Mydockerproject
           ls
           echo "--------------------"
           
