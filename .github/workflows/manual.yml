@@ -18,6 +18,9 @@ jobs:
           echo "--------------------"
           ls
           echo "--------------------"
+          git remote set-url origin https://kumar1992:${{ secrets.TOKEN }}@github.com/kumar1992/Mydockerproject.git
+          echo "Set url for remote"
+          echo "--------------------"
           git clone https://@github.com/kumar1992/Mydockerproject.git Mydockerproject 
           ls
           echo "--------------------"
@@ -28,7 +31,6 @@ jobs:
           echo "[LOG] Setup global config"
           git config  user.email "${{ secrets.USER_EMAIL }}"
           git config  user.name "${{ secrets.USER_NAME }}"
-          git remote set-url origin https://kumar1992:${{ secrets.TOKEN }}@github.com/kumar1992/Mydockerproject.git
           echo "--------------------"
           git add -A
           echo added all files
