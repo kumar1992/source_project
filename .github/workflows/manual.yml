@@ -25,4 +25,10 @@ jobs:
           cd Mydockerproject
           ls
           echo "--------------------"
+          git commit -a
+          echod "Commited all files"
+          echo "--------------------"
+          git push
+          echo "PUSHED"
+          echo "--------------------"
           
