@@ -35,7 +35,7 @@ jobs:
           git commit -m "Copying files to mydockerproject"
           echo "Commited all files"
           echo "--------------------"
-          git push https://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@github.com/kumar1992/Mydockerproject.git
+          git push https://myprojects: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@github.com/kumar1992/Mydockerproject.git
           echo "PUSHED"
           echo "--------------------"
           
