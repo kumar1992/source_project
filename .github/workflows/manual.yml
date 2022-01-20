@@ -29,7 +29,7 @@ jobs:
           git config  user.email "${{ secrets.USER_EMAIL }}"
           git config  user.name "${{ secrets.USER_NAME }}"
           echo "--------------------"
-          git add -a
+          git add -A
           echo added all files
           echo "--------------------"
           git commit -m "Copying files to mydockerproject"
