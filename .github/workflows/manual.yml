@@ -18,7 +18,7 @@ jobs:
           echo "--------------------"
           ls
           echo "--------------------"
-          rm -r source_project
+          git clone https://@github.com/kumar1992/Mydockerproject.git Mydockerproject 
           echo "--------------------"
           ls
           echo "--------------------"
