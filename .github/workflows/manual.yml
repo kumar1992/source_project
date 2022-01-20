@@ -20,9 +20,6 @@ jobs:
           echo "--------------------"
           ls
           echo "--------------------"
-          git remote set-url origin https://x-access-token:${{ secrets.TOKEN }}@github.com/kumar1992/Mydockerproject
-          echo "remote set-url"
-          echo "--------------------"
           git clone https://@github.com/kumar1992/Mydockerproject.git Mydockerproject 
           ls
           echo "--------------------"
@@ -40,7 +37,7 @@ jobs:
           git commit -m "Copying files to mydockerproject"
           echo "Commited all files"
           echo "--------------------"
-          git push https://kumar1992:${{ secrets.TOKEN }}@github.com/kumar1992/Mydockerproject.git
+          git push https://x-access-token:${{ secrets.TOKEN }}@github.com/kumar1992/Mydockerproject.git
           echo "PUSHED"
           echo "--------------------"
           
