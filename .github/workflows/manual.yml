@@ -29,6 +29,9 @@ jobs:
           git config  user.email "${{ secrets.USER_EMAIL }}"
           git config  user.name "${{ secrets.USER_NAME }}"
           echo "--------------------"
+          git add -a
+          echo added all files
+          echo "--------------------"
           git commit -a
           echod "Commited all files"
           echo "--------------------"
