@@ -32,7 +32,7 @@ jobs:
           git add -a
           echo added all files
           echo "--------------------"
-          git commit -a
+          git commit -m "Copying files to mydockerproject"
           echod "Commited all files"
           echo "--------------------"
           git push
