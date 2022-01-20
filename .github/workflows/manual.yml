@@ -28,7 +28,7 @@ jobs:
           echo "[LOG] Setup global config"
           git config  user.email "${{ secrets.USER_EMAIL }}"
           git config  user.name "${{ secrets.USER_NAME }}"
-          git remote set-url origin https://kumar1992:${{ secrets.TOKEN }}@github.com/kumar1992/Mydockerproject.git
+          git remote set-url origin https://${{ secrets.TOKEN }}@github.com/kumar1992/Mydockerproject.git
           echo "--------------------"
           git add -A
           echo added all files
@@ -36,7 +36,7 @@ jobs:
           git commit -m "Copying files to mydockerproject"
           echo "Commited all files"
           echo "--------------------"
-          git push --set-upstream origin 
+          git push https://${{ secrets.TOKEN }}@github.com/kumar1992/Mydockerproject.git
           echo "PUSHED"
           echo "--------------------"
           
