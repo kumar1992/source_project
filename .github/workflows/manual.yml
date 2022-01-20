@@ -28,6 +28,8 @@ jobs:
           echo "[LOG] Setup global config"
           git config  user.email "${{ secrets.USER_EMAIL }}"
           git config  user.name "${{ secrets.USER_NAME }}"
+          git config -l
+          git config credential.helper cache
           echo "--------------------"
           git add -A
           echo added all files
@@ -35,7 +37,7 @@ jobs:
           git commit -m "Copying files to mydockerproject"
           echo "Commited all files"
           echo "--------------------"
-          git push https://myprojects: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@github.com/kumar1992/Mydockerproject.git
+          git push https://secrets.USER_NAME:@github.com/kumar1992/Mydockerproject.git
           echo "PUSHED"
           echo "--------------------"
           
