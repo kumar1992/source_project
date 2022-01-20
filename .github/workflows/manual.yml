@@ -1,0 +1,20 @@
+name: Test job
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run : |
+          echo "[LOG] It contains [newrepo], will update to other repo"
+          echo "[LOG] Cloning Newrepo"
+          git clone https://github.com/kumar1992/source_project.git source
+          ls
+          cd ..
+          ls
+          echo "--------------------"
+          
