@@ -27,8 +27,6 @@ jobs:
           ls
           echo "--------------------"
           echo "[LOG] Setup global config"
-          git config  user.email "${{ secrets.USER_EMAIL }}"
-          git config  user.name "${{ secrets.USER_NAME }}"
           git config -l
           git config credential.helper cache
           echo "--------------------"
