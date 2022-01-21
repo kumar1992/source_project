@@ -19,7 +19,9 @@ jobs:
           ls
           echo "--------------------"
           git clone https://@github.com/kumar1992/Mydockerproject.git Mydockerproject 
+          cd Mydockerproject
           git checkout -b UPDATE-CSV
+          cd ..
           ls
           echo "--------------------"
           mkdir -p Mydockerproject/resources
