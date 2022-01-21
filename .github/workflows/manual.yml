@@ -35,7 +35,7 @@ jobs:
           git add -A
           echo added all files
           echo "--------------------"
-          git diff --exit-code || git commit -m "Copying source files to mydockerproject/resources"
+          git diff --exit-code || git commit -am "Copying source files to mydockerproject/resources"
           echo "Commited all files"
           echo "--------------------"
           git push https://${{ secrets.TOKEN }}:@github.com/kumar1992/Mydockerproject.git
