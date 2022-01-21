@@ -21,7 +21,7 @@ jobs:
           git clone https://@github.com/kumar1992/Mydockerproject.git Mydockerproject 
           ls
           echo "--------------------"
-          cp source_project/resources/*.txt Mydockerproject/.
+          cp source_project/resources/source*.txt Mydockerproject/resources/.
           cd Mydockerproject
           ls
           echo "--------------------"
