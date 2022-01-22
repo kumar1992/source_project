@@ -5,15 +5,20 @@ on:
     branches: [ main ]
 
 jobs:
-  release:
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout source repo
     - uses: actions/checkout@v2
       with:
-          path: main
-    - name: Checkout destination repo
+        repository: kumar1992/source_project
+        path: ./source_project
+    
     - uses: actions/checkout@v2
       with:
-          repository: kumar1992/destination_project
-          path: destination_project
+        repository: kumar1992/destination_project
+        path: ./destination_project
+    
+    - name: Show Working directory
+      run: ls
