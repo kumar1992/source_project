@@ -30,13 +30,12 @@ jobs:
     - name: Setup global config
       run: |
        cd destination_project
-       ls
        git config  user.name "${{ secrets.USER_NAME }}"
        git config credential.helper cache
            
     - name: Creating a branch and pushing the changes
       run: |
-       ls
+       cd destination_project
        echo "[LOG] Creating branch for destination_project"
        git checkout -b UPDATE-CSV-${{ github.run_number }}
        echo "[LOG] Add files for staging"
