@@ -12,6 +12,8 @@ jobs:
           uses: actions/checkout@v2
           with:
             path: main
+        - run: |
+               ls
 
         
   Check_out_destination_repo:
