@@ -26,12 +26,16 @@ jobs:
     - name: Copy the source files to destination_project/resources
       run: |
        cp source_project/resources/source*.txt  destination_project/resources/.
-
-    - name: Creating a branch and pushing the changes
+    
+    - name: Setup credential cache config
       run: |
        cd destination_project
        git config  user.name "${{ secrets.USER_NAME }}"
        git config credential.helper cache
+
+    - name: Creating a branch and pushing the changes
+      run: |
+       cd destination_project
        echo "[LOG] Creating branch for destination_project"
        git checkout -b UPDATE-CSV-${{ github.run_number }}
        echo "[LOG] Add files for staging"
