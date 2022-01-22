@@ -20,7 +20,6 @@ jobs:
           echo "[LOG] Copy the source files to mydockerproject/resources files"
           cp source_project/resources/source*.txt Mydockerproject/resources/.
           cd Mydockerproject
-      if: github.event.diff
     - name: Check for changes
     - run : |
           echo "[LOG] Creating branch for Mydockerproject if changes present"        
