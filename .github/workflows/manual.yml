@@ -5,28 +5,20 @@ on:
     branches: [ main ]
 
 jobs:
-  Check_out_source_repo:
+  release:
     runs-on: ubuntu-latest
     steps:
-        - name: Checkout
-          uses: actions/checkout@v2
-          with:
-            path: main
-        - run: |
-               ls
-
-        
-  Check_out_destination_repo:
-     runs-on: ubuntu-latest
-     steps:
-         - name: Checkout tools repo
-         - uses: actions/checkout@v2
-           with:
-            repository: kumar1992/destination_project
-            path: destination_project
-         - run: |
-                 ls
-            
+    - name: Checkout source repo
+      uses: actions/checkout@v2
+      with:
+          path: main
+    - name: Checkout destination repo
+    - uses: actions/checkout@v2
+      with:
+          repository: kumar1992/destination_project
+          path: destination_project
+    - run: |
+           ls
            
    
      
