@@ -31,6 +31,7 @@ jobs:
       run: |
        cd destination_project
        git config  user.name "${{ secrets.USER_NAME }}"
+       git config l
        git config credential.helper cache
            
     - name: Creating a branch and pushing the changes
