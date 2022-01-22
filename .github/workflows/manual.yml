@@ -24,8 +24,3 @@ jobs:
     
     - name: Create resource directory in destination_project.
       run: ls
-       
-          
-      
-      
-      
