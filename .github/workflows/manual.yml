@@ -28,7 +28,7 @@ jobs:
           echo "[LOG] Add files for staging"
           git add -A
           echo "[LOG] ---->"
-          git commit -m "Copying source files to mydockerproject/resources"
+          git diff-index --quiet HEAD || git commit -m "Copying source files to mydockerproject/resources"
           echo "[LOG] Commited all files"
           echo "[LOG] Push the changes to branch"
           git push https://${{ secrets.TOKEN }}:@github.com/kumar1992/Mydockerproject.git
