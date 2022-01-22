@@ -22,15 +22,4 @@ jobs:
           cd ..
           echo "[LOG] Create a resources directory if not exist"
           mkdir -p Mydockerproject/resources
-          echo "[LOG] Copy the source files to mydockerproject/resources files"
-          cp source_project/resources/source*.txt Mydockerproject/resources/.
-          echo "[LOG] Setup global config"
-          git config  user.name "${{ secrets.USER_NAME }}"
-          git config credential.helper cache
-          echo "[LOG] Add files for staging"
-          git add -A
-          echo "[LOG] Commit the changes>"
-          git commit -m "Copying source files to mydockerproject/resources"
-          echo "[LOG] Push the changes to branch"
-          git push https://${{ secrets.TOKEN }}:@github.com/kumar1992/Mydockerproject.git
-          echo "--------------------"              
+          ls
