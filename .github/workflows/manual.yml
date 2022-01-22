@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-          github-token: ${{ secrets.TOKEN }}
     - run : |
           echo "[LOG] Cloning source_project"
           git clone https://@github.com/kumar1992/source_project.git source_project
