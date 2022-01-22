@@ -19,10 +19,10 @@ jobs:
           cd Mydockerproject
           echo "[LOG] Creating branch for Mydockerproject"        
           git checkout -b UPDATE-CSV
+          cd ..
           echo "[LOG] Create a resources directory if not exist"
           mkdir -p Mydockerproject/resources
           echo "[LOG] Copy the source files to mydockerproject/resources files"
-          cd ..
           cp source_project/resources/source*.txt Mydockerproject/resources/.
           echo "[LOG] Setup global config"
           git config  user.name "${{ secrets.USER_NAME }}"
