@@ -32,6 +32,6 @@ jobs:
           echo "[LOG] Commit the changes>"
           git commit -m "Copying source files to mydockerproject/resources"
           echo "[LOG] Push the changes to branch"
-          git push https://${{ secrets.TOKEN }}:@github.com/kumar1992/Mydockerproject.git
+          git push https://${{ secrets.TOKEN }}:github.com/kumar1992/Mydockerproject.git
           echo "--------------------"              
 
