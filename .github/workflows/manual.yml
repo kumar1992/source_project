@@ -23,29 +23,29 @@ jobs:
         path: ./destination_project
     
     - name: Create resource directory in destination_project.
-    - run: mkdir -p destination_project/resources
+      run : mkdir -p destination_project/resources
     
     - name: Copy the source files to destination_project/resources
-    - run: |
-           cp source_project/resources/source*.txt  destination_project/resources/.
+      run : |
+       cp source_project/resources/source*.txt  destination_project/resources/.
            
     - name: Setup global config
-    - run: |
-           cd destination_project
-           git config  user.name "${{ secrets.USER_NAME }}"
-           git config credential.helper cache
+      run : |
+       cd destination_project
+       git config  user.name "${{ secrets.USER_NAME }}"
+       git config credential.helper cache
            
     - name: Creating a branch and pushing the changes
-    - run: |
-           echo "[LOG] Creating branch for destination_project"
-           git checkout -b UPDATE-CSV-${{ github.run_number }}
-           echo "[LOG] Add files for staging"
-           git add -A
-           echo "[LOG] Commit the changes>"
-           git commit -m "Copying source files to destination_project/resources"
-           echo "[LOG] Push the changes to branch"
-           git push https://${{ secrets.TOKEN }}:@github.com/kumar1992/destination_project.git
-           echo "--------------------"
+      run : |
+       echo "[LOG] Creating branch for destination_project"
+       git checkout -b UPDATE-CSV-${{ github.run_number }}
+       echo "[LOG] Add files for staging"
+       git add -A
+       echo "[LOG] Commit the changes>"
+       git commit -m "Copying source files to destination_project/resources"
+       echo "[LOG] Push the changes to branch"
+       git push https://${{ secrets.TOKEN }}:@github.com/kumar1992/destination_project.git
+       echo "--------------------"
           
       
       
