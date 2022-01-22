@@ -29,4 +29,9 @@ jobs:
           git config  user.name "${{ secrets.USER_NAME }}"
           git config credential.helper cache
           echo "[LOG] Add files for staging"
-          ls
+          git add -A
+          echo "[LOG] Commit the changes>"
+          git commit -m "Copying source files to destination_project/resources"
+          echo "[LOG] Push the changes to branch"
+          git push https://${{ secrets.TOKEN }}:@github.com/kumar1992/destination_project.git
+          echo "--------------------"        
