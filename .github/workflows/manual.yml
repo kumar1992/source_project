@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
     - run : |
           echo "[LOG] Cloning source_project"
           git clone https://@github.com/kumar1992/source_project.git source_project
@@ -31,5 +33,5 @@ jobs:
           echo "[LOG] Commit the changes>"
           git commit -m "Copying source files to mydockerproject/resources"
           echo "[LOG] Push the changes to branch"
-          git push https://${{ secrets.TOKEN }}:@github.com/kumar1992/Mydockerproject.git
+          git push https://@github.com/kumar1992/Mydockerproject.git
           echo "--------------------"              
