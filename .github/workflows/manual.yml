@@ -21,6 +21,3 @@ jobs:
       with:
         repository: kumar1992/destination_project
         path: ./destination_project
-    
-    - name: Show Working directory
-      run: ls
