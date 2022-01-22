@@ -10,29 +10,25 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run : |
-          echo "[LOG] It contains [newrepo], will update to other repo"
           echo "[LOG] Cloning source_project"
           git clone https://@github.com/kumar1992/source_project.git source_project
           echo "[LOG] Cloning Mydockerproject"
           git clone https://@github.com/kumar1992/Mydockerproject.git Mydockerproject 
-          cd Mydockerproject
-          echo "[LOG] Creating branch for Mydockerproject"        
-          git checkout -b UPDATE-CSV
-          cd ..
           echo "[LOG] Create a resources directory if not exist"
           mkdir -p Mydockerproject/resources
           echo "[LOG] Copy the source files to mydockerproject/resources files"
           cp source_project/resources/source*.txt Mydockerproject/resources/.
-          cd Mydockerproject/resources
+          cd Mydockerproject
+          echo "[LOG] Creating branch for Mydockerproject if changes present"        
+          git diff-index --quiet HEAD || git checkout -b UPDATE-CSV
           echo "[LOG] Setup global config"
           git config  user.name "${{ secrets.USER_NAME }}"
           git config credential.helper cache
           echo "[LOG] Check for any changes in source files."
-          git diff-index --quiet HEAD || git status
           echo "[LOG] Add files for staging"
           git add -A
           echo "[LOG] ---->"
-          git diff-index --quiet HEAD || git commit -m "Copying source files to mydockerproject/resources"
+          git commit -m "Copying source files to mydockerproject/resources"
           echo "[LOG] Commited all files"
           echo "[LOG] Push the changes to branch"
           git push https://${{ secrets.TOKEN }}:@github.com/kumar1992/Mydockerproject.git
