@@ -35,6 +35,7 @@ jobs:
            
     - name: Creating a branch and pushing the changes
       run: |
+       ls
        echo "[LOG] Creating branch for destination_project"
        git checkout -b UPDATE-CSV-${{ github.run_number }}
        echo "[LOG] Add files for staging"
