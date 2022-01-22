@@ -22,5 +22,5 @@ jobs:
         repository: kumar1992/destination_project
         path: ./destination_project
     
-    - name: Create resource directory in destination_project.
+    - name: Show Working directory
       run: ls
