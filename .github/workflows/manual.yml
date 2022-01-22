@@ -13,7 +13,24 @@ jobs:
     - uses: actions/checkout@v2
     - run : |
           echo "[LOG] Cloning source_project"
-          ls
           cd ..
-          echo "--------------"
-          ls
+          echo "[LOG] Cloning destination_project"
+          git clone https://@github.com/kumar1992/destination_project.git destination_project
+          cd destination_project
+          echo "[LOG] Creating branch for destination_project"        
+          git checkout -b UPDATE-CSV
+          cd ..
+          echo "[LOG] Create a resources directory if not exist"
+          mkdir -p destination_project/resources
+          echo "[LOG] Copy the source files to destination_project/resources files"
+          cp  source_project/resources/source*.txt  destination_project/resources/.
+          echo "[LOG] Setup global config"
+          git config  user.name "${{ secrets.USER_NAME }}"
+          git config credential.helper cache
+          echo "[LOG] Add files for staging"
+          git add -A
+          echo "[LOG] Commit the changes>"
+          git commit -m "Copying source files to destination_project/resources"
+          echo "[LOG] Push the changes to branch"
+          git push https://${{ secrets.TOKEN }}:@github.com/kumar1992/destination_project.git
+          echo "--------------------"          
