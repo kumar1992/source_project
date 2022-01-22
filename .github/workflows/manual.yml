@@ -23,6 +23,7 @@ jobs:
       Validation:
          runs-on: ubuntu-latest
          steps:
+          - uses: actions/checkout@v2
           - name: Check for changes
           - run : |
                 echo "[LOG] Creating branch for Mydockerproject if changes present"        
