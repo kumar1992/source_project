@@ -5,35 +5,36 @@ on:
     branches: [ main ]
 
 jobs:
-  Build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Copy files to docker resources
-    - run : |
-          echo "[LOG] Cloning source_project"
-          git clone https://@github.com/kumar1992/source_project.git source_project
-          echo "[LOG] Cloning Mydockerproject"
-          git clone https://@github.com/kumar1992/Mydockerproject.git Mydockerproject 
-          echo "[LOG] Create a resources directory if not exist"
-          mkdir -p Mydockerproject/resources
-          echo "[LOG] Copy the source files to mydockerproject/resources files"
-          cp source_project/resources/source*.txt Mydockerproject/resources/.
-          cd Mydockerproject
-    - name: Check for changes
-    - run : |
-          echo "[LOG] Creating branch for Mydockerproject if changes present"        
-          git diff-index --quiet HEAD || git checkout -b UPDATE-CSV
-          echo "[LOG] Setup global config"
-          git config  user.name "${{ secrets.USER_NAME }}"
-          git config credential.helper cache
-          echo "[LOG] Check for any changes in source files."
-          echo "[LOG] Add files for staging"
-          git add -A
-          echo "[LOG] ---->"
-          git diff-index --quiet HEAD || git commit -m "Copying source files to mydockerproject/resources"
-          echo "[LOG] Commited all files"
-          echo "[LOG] Push the changes to branch"
+      Build:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - name: Copy files to docker resources
+        - run : |
+              echo "[LOG] Cloning source_project"
+              git clone https://@github.com/kumar1992/source_project.git source_project
+              echo "[LOG] Cloning Mydockerproject"
+              git clone https://@github.com/kumar1992/Mydockerproject.git Mydockerproject 
+              echo "[LOG] Create a resources directory if not exist"
+              mkdir -p Mydockerproject/resources
+              echo "[LOG] Copy the source files to mydockerproject/resources files"
+              cp source_project/resources/source*.txt Mydockerproject/resources/.
+              cd Mydockerproject
+      Validation:
+          - name: Check for changes
+          - run : |
+                echo "[LOG] Creating branch for Mydockerproject if changes present"        
+                git diff-index --quiet HEAD || git checkout -b UPDATE-CSV
+                echo "[LOG] Setup global config"
+                git config  user.name "${{ secrets.USER_NAME }}"
+                git config credential.helper cache
+                echo "[LOG] Check for any changes in source files."
+                echo "[LOG] Add files for staging"
+                git add -A
+                echo "[LOG] ---->"
+                git diff-index --quiet HEAD || git commit -m "Copying source files to mydockerproject/resources"
+                echo "[LOG] Commited all files"
+                echo "[LOG] Push the changes to branch"
           git push https://${{ secrets.TOKEN }}:@github.com/kumar1992/Mydockerproject.git
           echo "--------------------"         
    
