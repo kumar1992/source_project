@@ -30,6 +30,7 @@ jobs:
     - name: Setup global config
       run: |
        cd destination_project
+       ls
        git config  user.name "${{ secrets.USER_NAME }}"
        git config credential.helper cache
            
