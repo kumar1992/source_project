@@ -10,13 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checking out source_project repo
     - uses: actions/checkout@v2
       with:
         repository: kumar1992/source_project
         path: ./source_project
 
-    - name: Checking out destination_project repo
     - uses: actions/checkout@v2
       with:
         repository: kumar1992/destination_project
